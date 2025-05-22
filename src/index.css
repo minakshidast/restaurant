@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 33% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 24 100% 49%; /* Updated to match #F97300 */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 46%;
+
+    --accent: 24 100% 49%; /* Updated to match #F97300 */
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 24 100% 49%; /* Updated to match #F97300 */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 24 100% 49%; /* Updated to match #F97300 */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 24 100% 49%; /* Updated to match #F97300 */
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 223 47% 20%;
+    --sidebar-ring: 24 100% 49%; /* Updated to match #F97300 */
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 13%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 24 100% 49%; /* Updated to match #F97300 */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 24 100% 49%; /* Updated to match #F97300 */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 24 100% 49%; /* Updated to match #F97300 */
+    
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 24 100% 49%; /* Updated to match #F97300 */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 24 100% 49%; /* Updated to match #F97300 */
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 223 47% 20%;
+    --sidebar-ring: 24 100% 49%; /* Updated to match #F97300 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .sidebar-link {
+    @apply flex items-center gap-3 rounded-md px-3 py-2 text-sidebar-foreground hover:bg-sidebar-accent/10 transition-colors;
+  }
+  
+  .sidebar-link.active {
+    @apply bg-sidebar-accent/20 text-sidebar-accent;
+  }
+
+  .section-heading {
+    @apply text-2xl font-semibold mb-6;
+  }
+  
+  .card-heading {
+    @apply text-lg font-medium mb-4;
+  }
+
+  .data-table {
+    @apply w-full border-collapse;
+  }
+  
+  .data-table th {
+    @apply text-left py-3 px-4 bg-muted font-medium text-muted-foreground text-sm;
+  }
+  
+  .data-table td {
+    @apply py-3 px-4 border-b;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-badge.pending {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .status-badge.preparing {
+    @apply bg-blue-100 text-blue-800;
+  }
+  
+  .status-badge.completed {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .stat-card {
+    @apply rounded-lg border bg-card p-6 shadow-sm;
+  }
+
+  .stat-card-value {
+    @apply text-3xl font-bold;
+  }
+
+  .stat-card-label {
+    @apply text-sm text-muted-foreground mt-1;
+  }
+}
